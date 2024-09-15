@@ -23,9 +23,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-// metode nya get lalu masukkan namespace AuthController 
-// attribute name merupakan penamaan dari route yang kita buat
-// kita tinggal panggil fungsi route(name) pada layout atau controller
 Route::get('login', [AuthController::class,'index'])->name('login');
 Route::get('register', [AuthController::class,'register'])->name('register');
 Route::post('proses_login', [AuthController::class,'proses_login'])->name('proses_login');
@@ -33,10 +30,6 @@ Route::get('logout', [AuthController::class,'logout'])->name('logout');
 
 Route::post('proses_register',[AuthController::class,'proses_register'])->name('proses_register');
 
-// kita atur juga untuk middleware menggunakan group pada routing
-// didalamnya terdapat group untuk mengecek kondisi login
-// jika user yang login merupakan admin maka akan diarahkan ke AdminController
-// jika user yang login merupakan user biasa maka akan diarahkan ke UserController
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['cek_login:staff']], function () {
         Route::resource('staff', StaffController::class);
