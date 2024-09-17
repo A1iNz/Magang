@@ -33,7 +33,11 @@
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <form action="{{ url('logout') }}" method="POST">
+                            @csrf
+                            {{-- <li><a class="dropdown-item" href="#">Sign out</a></li> --}}
+                            <li><button class="dropdown-item" type="submit"> Logout </button></li>
+                        </form>
                     </ul>
                 </div>
             </div>
