@@ -12,15 +12,15 @@
         
                 <div class="d-flex ms-auto">
                     <ul class="nav px-3">
-                        <li><a href="#" class="nav-link px-2 link-body-emphasis">Dashboard</a></li>
-                        <li><a href="#" class="nav-link px-2 link-body-emphasis">Pengaduan</a></li>
-                        <li><a href="#" class="nav-link px-2 link-body-emphasis">Hardware</a></li>
-                        <li><a href="#" class="nav-link px-2 link-body-emphasis">Laporan</a></li>
+                        <li><a href="{{ route('dashboard')}}" class="nav-link px-2 link-body-emphasis">Dashboard</a></li>
+                        <li><a href="{{ route('pengaduan')}}" class="nav-link px-2 link-body-emphasis">Pengaduan</a></li>
+                        <li><a href="{{ route('hardware')}}" class="nav-link px-2 link-body-emphasis">Hardware</a></li>
+                        <li><a href="{{ route('laporan')}}" class="nav-link px-2 link-body-emphasis">Laporan</a></li>
                     </ul>
                 </div>
 
                 <div class="me-3">
-                    <a href=""><i class="fa-solid fa-bell fa-2xl" style="color: #000000;"></i></a>
+                    <a href="{{route('notifikasi')}}"><i class="fa-solid fa-bell fa-2xl" style="color: #000000;"></i></a>
                 </div>
                 
                 <div class="dropdown text-end d-flex align-items-center justify-content-center">
@@ -29,9 +29,8 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{route('settings')}}">Settings</a></li>
+                        <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <form action="{{ url('logout') }}" method="POST">
                             @csrf
