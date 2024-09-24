@@ -61,3 +61,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('hardware', HardwareController::class);
     });
 });
+
+Route::get('/hardware/create', [HardwaredController::class, 'create'])->name('hardware.create');
+// Route for storing the new hardware data
+Route::post('/hardware', [HardwaredController::class, 'store'])->name('hardware.store');
+// Route for deleting hardware (optional, if you want to implement delete functionality)
+Route::delete('/hardware/{id}', [HardwaredController::class, 'destroy'])->name('hardware.destroy');
