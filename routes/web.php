@@ -12,6 +12,7 @@ use App\Http\Controllers\HardwaredController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NotifikasiController;
+use App\Http\Controllers\ComplaintController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,7 @@ Route::get('profile', [ProfileController::class,'index'])->name('profile');
 Route::get('notifikasi', [NotifikasiController::class,'index'])->name('notifikasi');
 
 Route::post('proses_register',[AuthController::class,'proses_register'])->name('proses_register');
+Route::post('/complaints', [ComplaintController::class, 'store'])->name('complaints.store');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['cek_login:staff']], function () {
