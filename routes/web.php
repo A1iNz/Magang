@@ -13,6 +13,7 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\RequestController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,7 @@ Route::get('login', [AuthController::class,'index'])->name('login');
 Route::get('register', [AuthController::class,'register'])->name('register');
 Route::post('proses_login', [AuthController::class,'proses_login'])->name('proses_login');
 Route::post('logout', [AuthController::class,'logout'])->name('logout');
+Route::post('proses_register',[AuthController::class,'proses_register'])->name('proses_register');
 
 Route::get('pengaduan', [PengaduanController::class,'index'])->name('pengaduan');
 Route::get('hardwared', [HardwaredController::class,'index'])->name('hardware');
@@ -44,7 +46,9 @@ Route::get('settings', [SettingsController::class,'index'])->name('settings');
 Route::get('profile', [ProfileController::class,'index'])->name('profile');
 Route::get('notifikasi', [NotifikasiController::class,'index'])->name('notifikasi');
 
-Route::post('proses_register',[AuthController::class,'proses_register'])->name('proses_register');
+Route::get('request', [RequestController::class,'index'])->name('request');
+Route::post('proses_request', [RequestController::class,'proses_request'])->name('req');
+
 Route::post('/complaints', [ComplaintController::class, 'store'])->name('complaints.store');
 
 Route::group(['middleware' => ['auth']], function () {

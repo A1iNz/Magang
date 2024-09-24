@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@extends('layouts.header')
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-between">
