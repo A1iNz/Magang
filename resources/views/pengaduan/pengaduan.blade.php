@@ -1,19 +1,12 @@
 @extends('layouts.app')
-
+@extends('layouts.header')
 @section('content')
 <div class="container">
     <div class="row">
-        <!-- Left side of the form (Navigation or Details) -->
-        <div class="col-lg-4 d-none d-lg-block p-4" style="background-color: #84C3B1; min-height: 100vh;">
-            <div class="d-flex justify-content-center">
-                <img class="img-fluid" src="{{ asset('img/rsuds.png') }}" alt="RSUD Logo" style="max-width: 300px;">
-            </div>
-            <h3 class="text-center mt-4">Helpdesk RSUD Dr. Soetomo</h3>
-        </div>
 
         <!-- Right side (Form) -->
         <div class="col-lg-8 p-5">
-            <h2 class="text-center mb-4">Formulir Pengaduan</h2>
+            <h2 class="text-center mb-4">Formulir Transaksi/Pengaduan</h2>
             <form action="{{ route('complaints.store') }}" method="POST">
                 @csrf
                 <div class="row mb-3">

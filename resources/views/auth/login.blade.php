@@ -4,24 +4,24 @@
 <div id="layoutAuthentication">
     <div id="layoutAuthentication_content">
         <main>
-            <div class="container">
-                <div class="row justify-content-center">
+            <div class="">
+                <div class="row">
                     <!-- Left Side (Logo and Description) -->
-                    <div class="col-lg-5 col-md-6 d-flex flex-column justify-content-center align-items-center p-5" style="background-color: #84C3B1; min-height: 100vh;">
+                    <div class="col-xl-4 d-flex flex-column justify-content-center align-items-center" style="background-color: #84C3B1; min-height: 100vh;">
                         <div class="card d-flex justify-content-center align-content-center" style="width: 80%; max-width: 300px;">
                             <img class="img-fluid" src="{{ asset('img/rsuds.png') }}" alt="RSUD Logo">
                         </div>
-                        <div class="text-center mt-4">
+                        <div class="text-center m-5">
                             <h3>Helpdesk Rumah Sakit Umum Daerah Dr. Soetomo</h3>
                         </div>
                     </div>              
 
                     <!-- Spacer (Optional) -->
-                    <div class="col-lg-1 d-none d-lg-block"></div>      
+                    <div class="col-lg-1 d-none d-lg-block "></div>      
 
                     <!-- Right Side (Login Form) -->
-                    <div class="col-lg-5 col-md-6 p-5">
-                        <div class="border-0 rounded-lg mt-5">
+                    <div class="col-lg-5 mt-5 p-5">
+                        <div class="border-0 rounded-lg pt-5 mt-5">
                             <!-- Error Alert -->
                             @if(session('error'))
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -68,13 +68,13 @@
                                     </div>
 
                                     <!-- Login Button -->
-                                    <div class="form-group d-flex align-items-center justify-content-center mb-3">
+                                    <div class="form-group d-flex align-items-center justify-content-center my-5">
                                         <button class="btn btn-primary btn-block fs-4" style="width: 100%;" type="submit">Login</button>
                                     </div>
 
                                     <!-- General Request Link -->
-                                    <div class="form-group d-flex align-items-center justify-content-center mt-4">
-                                        <a href="#" style="color: #84C3B1">GENERAL REQUEST</a>
+                                    <div class="form-group d-flex align-items-center justify-content-center">
+                                        <a href="{{ Route('request') }}" style="color: #84C3B1">GENERAL REQUEST</a>
                                     </div>
                                 </form>
                             </div>
