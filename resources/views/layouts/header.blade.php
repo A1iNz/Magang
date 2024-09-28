@@ -14,7 +14,6 @@
                     <ul class="nav px-3">
                         <li><a href="{{ route('dashboard')}}" class="nav-link px-2 link-body-emphasis">Dashboard</a></li>
                         <li><a href="{{ route('pengaduan')}}" class="nav-link px-2 link-body-emphasis">Pengaduan</a></li>
-                        <li><a href="{{ route('hardware')}}" class="nav-link px-2 link-body-emphasis">Hardware</a></li>
                         <li><a href="{{ route('laporan')}}" class="nav-link px-2 link-body-emphasis">Laporan</a></li>
                     </ul>
                 </div>

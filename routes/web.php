@@ -8,7 +8,6 @@ use App\Http\Controllers\HardwareController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HardwaredController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NotifikasiController;
@@ -39,13 +38,12 @@ Route::post('logout', [AuthController::class,'logout'])->name('logout');
 Route::post('proses_register',[AuthController::class,'proses_register'])->name('proses_register');
 
 Route::get('pengaduan', [PengaduanController::class,'index'])->name('pengaduan');
-Route::get('hardwared', [HardwaredController::class,'index'])->name('hardware');
+
 Route::get('laporan', [LaporanController::class,'index'])->name('laporan');
 Route::get('dashboard', [DashboardController::class,'index'])->name('dashboard');
 Route::get('settings', [SettingsController::class,'index'])->name('settings');
 Route::get('profile', [ProfileController::class,'index'])->name('profile');
 Route::get('notifikasi', [NotifikasiController::class,'index'])->name('notifikasi');
-
 Route::get('request', [RequestController::class,'index'])->name('request');
 Route::post('proses_request', [RequestController::class,'proses_request'])->name('req');
 
@@ -65,9 +63,3 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('hardware', HardwareController::class);
     });
 });
-
-Route::get('/hardware/create', [HardwaredController::class, 'create'])->name('hardware.create');
-// Route for storing the new hardware data
-Route::post('/hardware', [HardwaredController::class, 'store'])->name('hardware.store');
-// Route for deleting hardware (optional, if you want to implement delete functionality)
-Route::delete('/hardware/{id}', [HardwaredController::class, 'destroy'])->name('hardware.destroy');

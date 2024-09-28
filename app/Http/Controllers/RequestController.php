@@ -16,7 +16,7 @@ class RequestController extends Controller
         $tgl = Carbon::now('Asia/Jakarta')->isoFormat('D MMMM YYYY');
         $jam = Carbon::now('Asia/Jakarta')->isoFormat('h:mm:ss');
 
-        return view('general request.request', compact('tgl', 'jam'));
+        return view('generalRequest.request', compact('tgl', 'jam'));
     }
     
     public function proses_request(Request $request){

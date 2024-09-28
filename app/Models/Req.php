@@ -17,4 +17,5 @@ class Req extends Model
         'deskripsi',
         'kategori',
     ];
+
 }

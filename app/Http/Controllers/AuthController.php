@@ -30,7 +30,7 @@ class AuthController extends Controller
             }
 
         }
-        return view('login');
+        return view('auth.login');
      }
     //
     public function proses_login(Request $request){
